@@ -1,0 +1,67 @@
+/* index.wxss */
+.container {
+  padding: 40rpx;
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+  color: #333;
+}
+
+.section {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.tips {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+button {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.status {
+  background-color: #e8f4fd;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.status text {
+  font-size: 28rpx;
+  color: #2979ff;
+}
+
+.debug-info {
+  background-color: #f0f0f0;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  min-height: 200rpx;
+}
+
+.debug-info text {
+  font-size: 24rpx;
+  color: #666;
+  white-space: pre-wrap;
+  display: block;
+}
