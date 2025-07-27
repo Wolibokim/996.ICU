@@ -1,0 +1,116 @@
+/* audio-player.wxss */
+.audio-player {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.audio-cover {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+}
+
+.audio-meta {
+  flex: 1;
+}
+
+.audio-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.audio-artist {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.audio-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #666;
+  width: 80rpx;
+  text-align: center;
+}
+
+.progress-bar {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.control-btn {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  margin: 0 20rpx;
+  border: none;
+  padding: 0;
+}
+
+.control-btn::after {
+  display: none;
+}
+
+.play-btn {
+  width: 100rpx;
+  height: 100rpx;
+  background: #07c160;
+  color: #fff;
+}
+
+.play-btn .iconfont {
+  font-size: 40rpx;
+}
+
+.control-btn .iconfont {
+  font-size: 32rpx;
+}
+
+.audio-extra {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.extra-btn {
+  background: none;
+  border: none;
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.extra-btn::after {
+  display: none;
+}
+
+.extra-btn .iconfont {
+  font-size: 36rpx;
+}

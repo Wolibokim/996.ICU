@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">iOS微信小程序音频自动播放解决方案</view>
+  
+  <view class="section">
+    <view class="section-title">方案1：使用 wx.createInnerAudioContext()</view>
+    <button bindtap="playAudioMethod1" type="primary">播放音频（方案1）</button>
+    <view class="tips">推荐：需要用户交互触发</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">方案2：使用 BackgroundAudioManager</view>
+    <button bindtap="playAudioMethod2" type="primary">播放音频（方案2）</button>
+    <view class="tips">适合后台播放</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">方案3：WebView 内嵌网页播放</view>
+    <button bindtap="playAudioMethod3" type="primary">播放音频（方案3）</button>
+    <view class="tips">通过WebView实现</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">方案4：静音播放后切换</view>
+    <button bindtap="playAudioMethod4" type="primary">播放音频（方案4）</button>
+    <view class="tips">先播放静音，再切换真实音频</view>
+  </view>
+
+  <view class="status">
+    <text>播放状态：{{playStatus}}</text>
+  </view>
+
+  <view class="debug-info">
+    <text>调试信息：</text>
+    <text>{{debugInfo}}</text>
+  </view>
+</view>
