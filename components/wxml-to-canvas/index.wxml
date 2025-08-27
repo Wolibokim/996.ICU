@@ -1,0 +1,12 @@
+<view class="wxml-to-canvas-container">
+  <canvas 
+    canvas-id="{{canvasId}}" 
+    id="{{canvasId}}"
+    class="canvas" 
+    style="width: {{width}}px; height: {{height}}px;"
+    disable-scroll="{{true}}"
+  ></canvas>
+  <view class="wxml-container" style="position: absolute; left: -9999px; top: -9999px;">
+    <slot></slot>
+  </view>
+</view>

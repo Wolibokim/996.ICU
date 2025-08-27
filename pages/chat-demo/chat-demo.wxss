@@ -1,0 +1,141 @@
+/* chat-demo.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.control-btn {
+  margin: 0 10rpx;
+  font-size: 24rpx;
+}
+
+.canvas-container {
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.chat-content {
+  display: none; /* 隐藏，只用于canvas渲染参考 */
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.message-input {
+  flex: 1;
+  padding: 15rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+}
+
+.send-btn {
+  background-color: #07c160;
+  color: white;
+  font-size: 24rpx;
+}
+
+.preset-messages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.preset-btn {
+  font-size: 24rpx;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* 以下样式用于wxml内容，实际不会显示但可以作为样式参考 */
+.chat-header {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.message-list {
+  padding: 20rpx;
+}
+
+.message-item {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.message-item.own {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 16rpx;
+}
+
+.message-content {
+  max-width: 400rpx;
+}
+
+.message-item.own .message-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nickname {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+}
+
+.bubble {
+  padding: 20rpx 24rpx;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  line-height: 1.4;
+  position: relative;
+}
+
+.message-item:not(.own) .bubble {
+  background-color: #fff;
+  margin-left: 12rpx;
+}
+
+.message-item.own .bubble {
+  background-color: #95EC69;
+  margin-right: 12rpx;
+}
+
+.time {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 8rpx;
+}

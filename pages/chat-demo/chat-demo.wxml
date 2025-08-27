@@ -1,0 +1,59 @@
+<!--chat-demo.wxml-->
+<view class="container">
+  <!-- 操作按钮区域 -->
+  <view class="controls">
+    <button class="control-btn" bindtap="renderChat" type="primary" size="mini">渲染聊天界面</button>
+    <button class="control-btn" bindtap="saveImage" type="default" size="mini">保存图片</button>
+    <button class="control-btn" bindtap="addMessage" type="default" size="mini">添加消息</button>
+  </view>
+  
+  <!-- Canvas组件 -->
+  <view class="canvas-container">
+    <wxml-to-canvas 
+      width="{{canvasWidth}}" 
+      height="{{canvasHeight}}"
+      canvas-id="chat-canvas"
+      generic:wxml-to-canvas="wxml-to-canvas"
+    >
+      <!-- 这里可以放置要转换为canvas的wxml内容 -->
+      <view class="chat-content">
+        <view class="chat-header">聊天界面Demo</view>
+        <view class="message-list">
+          <view wx:for="{{messages}}" wx:key="id" class="message-item {{item.isOwn ? 'own' : 'other'}}">
+            <view class="avatar"></view>
+            <view class="message-content">
+              <view wx:if="{{!item.isOwn}}" class="nickname">{{item.nickname}}</view>
+              <view class="bubble">{{item.message}}</view>
+              <view class="time">{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </wxml-to-canvas>
+  </view>
+  
+  <!-- 消息输入区域 -->
+  <view class="input-area">
+    <input 
+      class="message-input" 
+      placeholder="输入消息..." 
+      value="{{inputMessage}}"
+      bindinput="onMessageInput"
+    />
+    <button class="send-btn" bindtap="sendMessage" size="mini">发送</button>
+  </view>
+  
+  <!-- 预设消息按钮 -->
+  <view class="preset-messages">
+    <button 
+      wx:for="{{presetMessages}}" 
+      wx:key="*this"
+      class="preset-btn" 
+      bindtap="sendPresetMessage" 
+      data-message="{{item}}"
+      size="mini"
+    >
+      {{item}}
+    </button>
+  </view>
+</view>
