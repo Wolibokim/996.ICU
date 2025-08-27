@@ -1,34 +1,34 @@
 // chat-template.js - 聊天界面的WXML模板和样式定义
 
 const chatWxml = (messages) => `
-<view class="chat-container">
-  <view class="chat-header">
-    <text class="header-title">聊天记录</text>
+<view class="chatContainer">
+  <view class="chatHeader">
+    <text class="headerTitle">聊天记录</text>
   </view>
-  <view class="message-list">
+  <view class="messageList">
     ${messages.map((message, index) => `
-      <view class="message-item ${message.isOwn ? 'own-message' : 'other-message'}" data-index="${index}">
+      <view class="messageItem ${message.isOwn ? 'ownMessage' : 'otherMessage'}">
         ${!message.isOwn ? `
           <view class="avatar">
-            <text class="avatar-text">${message.nickname ? message.nickname.charAt(0) : 'A'}</text>
+            <text class="avatarText">${message.nickname ? message.nickname.charAt(0) : 'A'}</text>
           </view>
         ` : ''}
-        <view class="message-content">
+        <view class="messageContent">
           ${!message.isOwn && message.nickname ? `
             <view class="nickname">
-              <text class="nickname-text">${message.nickname}</text>
+              <text class="nicknameText">${message.nickname}</text>
             </view>
           ` : ''}
-          <view class="message-bubble ${message.isOwn ? 'own-bubble' : 'other-bubble'}">
-            <text class="message-text">${message.message}</text>
+          <view class="messageBubble ${message.isOwn ? 'ownBubble' : 'otherBubble'}">
+            <text class="messageText">${message.message}</text>
           </view>
-          <view class="message-time">
-            <text class="time-text">${message.time}</text>
+          <view class="messageTime">
+            <text class="timeText">${message.time}</text>
           </view>
         </view>
         ${message.isOwn ? `
-          <view class="avatar own-avatar">
-            <text class="avatar-text">我</text>
+          <view class="avatar ownAvatar">
+            <text class="avatarText">我</text>
           </view>
         ` : ''}
       </view>
@@ -41,6 +41,7 @@ const chatStyle = {
   chatContainer: {
     width: 375,
     backgroundColor: '#ededed',
+    display: 'flex',
     flexDirection: 'column',
     minHeight: 600
   },
@@ -48,9 +49,12 @@ const chatStyle = {
     width: 375,
     height: 60,
     backgroundColor: '#393a3e',
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottom: '1px solid #2c2d30'
+    borderBottomWidth: 1,
+    borderBottomColor: '#2c2d30',
+    borderBottomStyle: 'solid'
   },
   headerTitle: {
     fontSize: 18,
@@ -64,12 +68,14 @@ const chatStyle = {
     paddingBottom: 15,
     paddingLeft: 15,
     paddingRight: 15,
+    display: 'flex',
     flexDirection: 'column',
     backgroundColor: '#ededed'
   },
   messageItem: {
     width: 345,
     marginBottom: 15,
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start'
   },
@@ -84,6 +90,7 @@ const chatStyle = {
     height: 40,
     backgroundColor: '#c8c9cc',
     borderRadius: 6,
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
@@ -101,6 +108,7 @@ const chatStyle = {
   },
   messageContent: {
     maxWidth: 250,
+    display: 'flex',
     flexDirection: 'column',
     flex: 1
   },
@@ -117,14 +125,15 @@ const chatStyle = {
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 6,
-    position: 'relative',
     maxWidth: 250,
-    minWidth: 60
+    minWidth: 60,
+    display: 'flex',
+    alignItems: 'center'
   },
   otherBubble: {
     backgroundColor: '#ffffff',
-    borderColor: '#d6d7da',
     borderWidth: 1,
+    borderColor: '#d6d7da',
     borderStyle: 'solid',
     marginLeft: 6
   },
@@ -136,10 +145,12 @@ const chatStyle = {
     fontSize: 16,
     color: '#333333',
     lineHeight: 22,
-    wordBreak: 'break-all'
+    wordBreak: 'break-word',
+    whiteSpace: 'pre-wrap'
   },
   messageTime: {
     marginTop: 5,
+    display: 'flex',
     flexDirection: 'row'
   },
   timeText: {

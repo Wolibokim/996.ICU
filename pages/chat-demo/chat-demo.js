@@ -1,5 +1,7 @@
 // chat-demo.js
 const { chatWxml, chatStyle } = require('./chat-template.js');
+const { simpleWxml, simpleStyle } = require('./simple-template.js');
+const { basicWxml, basicStyle } = require('./basic-template.js');
 
 Page({
   data: {
@@ -151,8 +153,14 @@ Page({
     })
 
     try {
-      const wxml = chatWxml(this.data.messages);
-      const style = chatStyle;
+      // 使用最基础版本进行测试
+      const wxml = basicWxml;
+      const style = basicStyle;
+
+      // 调试信息
+      console.log('WXML模板:', wxml);
+      console.log('样式配置:', style);
+      console.log('消息数据:', this.data.messages);
 
       const p1 = this.widget.renderToCanvas({
         wxml,
@@ -160,6 +168,7 @@ Page({
       });
 
       p1.then((res) => {
+        console.log('渲染成功:', res);
         this.container = res;
         this.extraImage();
       }).catch((error) => {
