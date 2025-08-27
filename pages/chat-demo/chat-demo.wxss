@@ -26,6 +26,25 @@
   box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
 }
 
+.preview-container {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.preview-title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.preview-image {
+  border-radius: 8rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+}
+
 .chat-content {
   display: none; /* 隐藏，只用于canvas渲染参考 */
 }

@@ -1,9 +1,13 @@
 // chat-demo.js
+const { chatWxml, chatStyle } = require('./chat-template.js');
+
 Page({
   data: {
     canvasWidth: 375,
     canvasHeight: 600,
     inputMessage: '',
+    previewImageSrc: '',
+    previewWidth: 300,
     messages: [
       {
         id: 1,
@@ -44,10 +48,11 @@ Page({
   },
 
   onLoad() {
+    this.widget = this.selectComponent('.widget');
     // 页面加载时自动渲染一次
     setTimeout(() => {
       this.renderChat()
-    }, 500)
+    }, 1000)
   },
 
   onMessageInput(e) {
@@ -136,37 +141,84 @@ Page({
   },
 
   renderChat() {
-    const canvasComponent = this.selectComponent('#chat-canvas')
-    if (!canvasComponent) {
+    if (!this.widget) {
       console.error('Canvas组件未找到')
       return
     }
 
-    // 渲染聊天界面
-    canvasComponent.renderChatInterface(this.data.messages)
-    
-    wx.showToast({
-      title: '渲染完成',
-      icon: 'success',
-      duration: 1000
+    wx.showLoading({
+      title: '渲染中...'
     })
+
+    try {
+      const wxml = chatWxml(this.data.messages);
+      const style = chatStyle;
+
+      const p1 = this.widget.renderToCanvas({
+        wxml,
+        style
+      });
+
+      p1.then((res) => {
+        this.container = res;
+        this.extraImage();
+      }).catch((error) => {
+        console.error('渲染失败:', error);
+        wx.hideLoading();
+        wx.showToast({
+          title: '渲染失败',
+          icon: 'error'
+        });
+      });
+    } catch (error) {
+      console.error('渲染出错:', error);
+      wx.hideLoading();
+      wx.showToast({
+        title: '渲染出错',
+        icon: 'error'
+      });
+    }
+  },
+
+  extraImage() {
+    const p2 = this.widget.canvasToTempFilePath();
+    p2.then(res => {
+      wx.hideLoading();
+      this.setData({
+        previewImageSrc: res.tempFilePath,
+        previewWidth: Math.min(300, this.container.layoutBox.width)
+      });
+      wx.showToast({
+        title: '渲染完成',
+        icon: 'success',
+        duration: 1000
+      });
+    }).catch((error) => {
+      console.error('生成图片失败:', error);
+      wx.hideLoading();
+      wx.showToast({
+        title: '生成图片失败',
+        icon: 'error'
+      });
+    });
   },
 
   async saveImage() {
-    try {
-      const canvasComponent = this.selectComponent('#chat-canvas')
-      if (!canvasComponent) {
-        throw new Error('Canvas组件未找到')
-      }
+    if (!this.data.previewImageSrc) {
+      wx.showToast({
+        title: '请先渲染聊天界面',
+        icon: 'none'
+      });
+      return;
+    }
 
+    try {
       wx.showLoading({
         title: '保存中...'
       })
 
-      const result = await canvasComponent.canvasToTempFilePath()
-      
       await wx.saveImageToPhotosAlbum({
-        filePath: result.tempFilePath
+        filePath: this.data.previewImageSrc
       })
 
       wx.hideLoading()
