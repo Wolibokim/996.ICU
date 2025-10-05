@@ -1,0 +1,10 @@
+# Discord爬虫依赖包
+
+# Selenium - 浏览器自动化
+selenium>=4.15.0
+
+# Undetected ChromeDriver - 绕过反爬虫检测
+undetected-chromedriver>=3.5.4
+
+# 其他可能需要的依赖
+requests>=2.31.0
