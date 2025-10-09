@@ -1,0 +1,154 @@
+/* 日历容器 */
+.calendar-container {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 20rpx 30rpx 30rpx;
+}
+
+/* 日历头部 */
+.calendar-header {
+  margin-bottom: 30rpx;
+}
+
+.calendar-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 20rpx;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30rpx;
+}
+
+.month-arrow {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  font-size: 48rpx;
+  color: #1677ff;
+  font-weight: 300;
+}
+
+.current-month {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+  min-width: 200rpx;
+  text-align: center;
+}
+
+/* 星期标题 */
+.week-header {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.week-item {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+  padding: 10rpx 0;
+}
+
+/* 日历主体 */
+.calendar-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.date-row {
+  display: flex;
+  gap: 10rpx;
+}
+
+.date-item {
+  flex: 1;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.date-text {
+  font-size: 28rpx;
+  color: #000000;
+  z-index: 1;
+}
+
+.date-item.other-month .date-text {
+  color: #cccccc;
+}
+
+/* 今天 */
+.date-item.today {
+  background: #1677ff;
+}
+
+.date-item.today .date-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 选中状态 */
+.date-item.selected {
+  background: #e6f4ff;
+}
+
+/* 日期标记 */
+.date-markers {
+  position: absolute;
+  bottom: 8rpx;
+  display: flex;
+  gap: 6rpx;
+  z-index: 2;
+}
+
+.marker {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+}
+
+.marker.medication {
+  background: #faad14;
+}
+
+.marker.completed {
+  background: #52c41a;
+}
+
+/* 图例 */
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.legend-text {
+  font-size: 26rpx;
+  color: #666666;
+}

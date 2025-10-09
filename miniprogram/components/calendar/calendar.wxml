@@ -1,0 +1,54 @@
+<!-- 日历组件 -->
+<view class="calendar-container">
+  <!-- 日历头部 - 月份切换 -->
+  <view class="calendar-header">
+    <view class="calendar-title">用药日历</view>
+    <view class="month-selector">
+      <view class="month-arrow" bindtap="prevMonth">
+        <text class="arrow-icon">‹</text>
+      </view>
+      <view class="current-month">{{currentYear}}年{{currentMonth}}月</view>
+      <view class="month-arrow" bindtap="nextMonth">
+        <text class="arrow-icon">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 星期标题 -->
+  <view class="week-header">
+    <view class="week-item" wx:for="{{weekDays}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <!-- 日历主体 -->
+  <view class="calendar-body">
+    <view class="date-row" wx:for="{{calendar}}" wx:key="week-{{index}}">
+      <view 
+        class="date-item {{item.isCurrentMonth ? '' : 'other-month'}} {{item.isToday ? 'today' : ''}} {{item.isSelected ? 'selected' : ''}}"
+        wx:for="{{item}}" 
+        wx:key="day-{{index}}"
+        wx:for-item="day"
+        bindtap="selectDate"
+        data-date="{{day.date}}"
+        data-is-current="{{day.isCurrentMonth}}">
+        <text class="date-text">{{day.day}}</text>
+        <!-- 用药标记 -->
+        <view class="date-markers" wx:if="{{day.isCurrentMonth}}">
+          <view class="marker medication" wx:if="{{day.hasMedication}}"></view>
+          <view class="marker completed" wx:if="{{day.isCompleted}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图例 -->
+  <view class="calendar-legend">
+    <view class="legend-item">
+      <view class="marker medication"></view>
+      <text class="legend-text">用药</text>
+    </view>
+    <view class="legend-item">
+      <view class="marker completed"></view>
+      <text class="legend-text">已完成</text>
+    </view>
+  </view>
+</view>
