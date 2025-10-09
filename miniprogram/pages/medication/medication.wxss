@@ -1,0 +1,183 @@
+/* 用药提醒页面样式 */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  padding-bottom: 160rpx;
+}
+
+/* 页面头部 */
+.page-header {
+  position: relative;
+  height: 88rpx;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.back-button {
+  position: absolute;
+  left: 30rpx;
+  font-size: 48rpx;
+  color: #333333;
+  font-weight: 300;
+  padding: 10rpx;
+}
+
+.page-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* 用药列表区域 */
+.medication-section {
+  background: #e6f4ff;
+  margin: 30rpx;
+  border-radius: 16rpx;
+  padding: 30rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #000000;
+}
+
+.section-date {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+/* 用药列表 */
+.medication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.medication-item {
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  position: relative;
+}
+
+.medication-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background: #e6f4ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.medication-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.medication-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #000000;
+}
+
+.medication-time {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.medication-status {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: #52c41a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-text {
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 80rpx 0;
+  text-align: center;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/* 底部按钮 */
+.bottom-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 30rpx;
+  display: flex;
+  gap: 20rpx;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.action-button {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.action-button.secondary {
+  background: #ffffff;
+  border: 2rpx solid #1677ff;
+}
+
+.action-button.secondary .button-text {
+  color: #1677ff;
+}
+
+.action-button.primary {
+  background: #1677ff;
+}
+
+.action-button.primary .button-text {
+  color: #ffffff;
+}
+
+.button-text {
+  font-size: 30rpx;
+  font-weight: 500;
+}

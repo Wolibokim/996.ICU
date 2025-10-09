@@ -1,0 +1,58 @@
+<!-- 用药提醒页面 -->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="page-header">
+    <view class="back-button" bindtap="goBack">‹</view>
+    <view class="page-title">用药提醒</view>
+  </view>
+
+  <!-- 日历组件 -->
+  <calendar 
+    medicationDates="{{medicationDates}}" 
+    bind:datechange="onDateChange">
+  </calendar>
+
+  <!-- 今日用药列表 -->
+  <view class="medication-section">
+    <view class="section-header">
+      <text class="section-title">今日用药</text>
+      <text class="section-date">{{selectedDateText}}</text>
+    </view>
+
+    <!-- 用药列表 -->
+    <view class="medication-list">
+      <view 
+        class="medication-item" 
+        wx:for="{{medicationList}}" 
+        wx:key="id"
+        bindtap="toggleMedication"
+        data-id="{{item.id}}">
+        <view class="medication-icon">
+          <image src="/images/pill-icon.png" class="icon-image" mode="aspectFit"></image>
+        </view>
+        <view class="medication-info">
+          <text class="medication-name">{{item.name}}</text>
+          <text class="medication-time">{{item.time}}</text>
+        </view>
+        <view class="medication-status" wx:if="{{item.completed}}">
+          <text class="status-text">✓</text>
+        </view>
+      </view>
+
+      <!-- 空状态 -->
+      <view class="empty-state" wx:if="{{medicationList.length === 0}}">
+        <text class="empty-text">今日暂无用药安排</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-actions">
+    <view class="action-button secondary" bindtap="editMedication">
+      <text class="button-text">修改用药</text>
+    </view>
+    <view class="action-button primary" bindtap="addMedication">
+      <text class="button-text">添加用药</text>
+    </view>
+  </view>
+</view>
