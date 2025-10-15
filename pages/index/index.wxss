@@ -1,0 +1,298 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding: 40rpx 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20rpx;
+  color: white;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  opacity: 0.8;
+}
+
+.global-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background: white;
+  border-radius: 15rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+.control-btn {
+  padding: 20rpx 30rpx;
+  border-radius: 25rpx;
+  font-size: 28rpx;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.play-all {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+.pause-all {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+}
+
+.stop-all {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+}
+
+.play {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+.pause {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+}
+
+.stop {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+}
+
+.status-info {
+  text-align: center;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background: white;
+  border-radius: 15rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+.status-text {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.audio-list {
+  margin-bottom: 30rpx;
+}
+
+.audio-item {
+  background: white;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+.audio-info {
+  margin-bottom: 20rpx;
+}
+
+.audio-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.audio-url {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+  word-break: break-all;
+}
+
+.audio-progress {
+  margin-bottom: 20rpx;
+}
+
+.time-info {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.audio-controls .control-btn {
+  flex: 1;
+  padding: 15rpx;
+  font-size: 26rpx;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 15rpx 0;
+}
+
+.volume-label {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+  min-width: 80rpx;
+}
+
+.volume-slider {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.volume-value {
+  font-size: 24rpx;
+  color: #666;
+  min-width: 60rpx;
+  text-align: right;
+}
+
+.loop-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx 0;
+}
+
+.loop-label {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.add-audio {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.add-btn {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+  color: white;
+  padding: 25rpx 50rpx;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  border: none;
+}
+
+/* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20rpx;
+  width: 90%;
+  max-width: 600rpx;
+  max-height: 80%;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-close {
+  font-size: 48rpx;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 30rpx;
+}
+
+.input-group {
+  margin-bottom: 30rpx;
+}
+
+.input-label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.input-field {
+  width: 100%;
+  padding: 20rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #2196F3;
+}
+
+.modal-footer {
+  display: flex;
+  padding: 30rpx;
+  border-top: 1rpx solid #eee;
+  gap: 20rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.modal-btn.cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.modal-btn.confirm {
+  background: #2196F3;
+  color: white;
+}
