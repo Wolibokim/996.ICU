@@ -1,0 +1,109 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">多音频播放器</text>
+    <text class="subtitle">同时播放多段线上音频</text>
+  </view>
+
+  <!-- 全局控制按钮 -->
+  <view class="global-controls">
+    <button class="control-btn play-all" bindtap="playAll">播放全部</button>
+    <button class="control-btn pause-all" bindtap="pauseAll">暂停全部</button>
+    <button class="control-btn stop-all" bindtap="stopAll">停止全部</button>
+  </view>
+
+  <!-- 播放状态显示 -->
+  <view class="status-info">
+    <text class="status-text">正在播放: {{playingCount}} 个音频</text>
+  </view>
+
+  <!-- 音频列表 -->
+  <view class="audio-list">
+    <view class="audio-item" wx:for="{{audioList}}" wx:key="id">
+      <view class="audio-info">
+        <text class="audio-title">{{item.title}}</text>
+        <text class="audio-url">{{item.src}}</text>
+        <view class="audio-progress">
+          <text class="time-info">{{item.currentTimeText}} / {{item.durationText}}</text>
+          <progress percent="{{item.progressPercent}}" stroke-width="4" activeColor="#1aad19"/>
+        </view>
+      </view>
+      
+      <view class="audio-controls">
+        <button 
+          class="control-btn {{item.isPlaying ? 'pause' : 'play'}}" 
+          bindtap="togglePlay" 
+          data-id="{{item.id}}">
+          {{item.isPlaying ? '暂停' : '播放'}}
+        </button>
+        <button class="control-btn stop" bindtap="stopAudio" data-id="{{item.id}}">停止</button>
+      </view>
+
+      <!-- 音量控制 -->
+      <view class="volume-control">
+        <text class="volume-label">音量</text>
+        <slider 
+          class="volume-slider" 
+          value="{{item.volume * 100}}" 
+          min="0" 
+          max="100" 
+          bindchange="onVolumeChange" 
+          data-id="{{item.id}}"
+          activeColor="#1aad19"
+          backgroundColor="#e9e9e9"
+        />
+        <text class="volume-value">{{item.volumeText}}</text>
+      </view>
+
+      <!-- 循环播放开关 -->
+      <view class="loop-control">
+        <text class="loop-label">循环播放</text>
+        <switch 
+          checked="{{item.loop}}" 
+          bindchange="onLoopChange" 
+          data-id="{{item.id}}"
+          color="#1aad19"
+        />
+      </view>
+    </view>
+  </view>
+
+  <!-- 添加音频按钮 -->
+  <view class="add-audio">
+    <button class="add-btn" bindtap="showAddAudioModal">添加音频</button>
+  </view>
+</view>
+
+<!-- 添加音频模态框 -->
+<view class="modal {{showModal ? 'show' : ''}}" catchtouchmove="preventTouchMove">
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">添加音频</text>
+      <text class="modal-close" bindtap="hideAddAudioModal">×</text>
+    </view>
+    <view class="modal-body">
+      <view class="input-group">
+        <text class="input-label">音频标题</text>
+        <input 
+          class="input-field" 
+          placeholder="请输入音频标题" 
+          value="{{newAudio.title}}" 
+          bindinput="onTitleInput"
+        />
+      </view>
+      <view class="input-group">
+        <text class="input-label">音频地址</text>
+        <input 
+          class="input-field" 
+          placeholder="请输入音频URL" 
+          value="{{newAudio.src}}" 
+          bindinput="onSrcInput"
+        />
+      </view>
+    </view>
+    <view class="modal-footer">
+      <button class="modal-btn cancel" bindtap="hideAddAudioModal">取消</button>
+      <button class="modal-btn confirm" bindtap="addAudio">确定</button>
+    </view>
+  </view>
+</view>
