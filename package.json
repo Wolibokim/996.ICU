@@ -1,0 +1,15 @@
+{
+  "name": "wxml-to-canvas-chat-demo",
+  "version": "1.0.0",
+  "description": "微信小程序wxml-to-canvas聊天界面demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "wxml-to-canvas": "latest"
+  },
+  "keywords": ["wechat", "miniprogram", "canvas", "chat"],
+  "author": "",
+  "license": "MIT"
+}

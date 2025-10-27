@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "聊天界面Canvas Demo",
+  "usingComponents": {
+    "wxml-to-canvas": "wxml-to-canvas"
+  }
+}
