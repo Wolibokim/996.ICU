@@ -1,0 +1,53 @@
+<view class="page-container">
+  <!-- 顶部背景 -->
+  <view class="bg-gradient"></view>
+
+  <!-- 自定义导航栏占位 -->
+  <view style="height: {{statusBarHeight}}px;"></view>
+  
+  <view class="content-wrapper">
+    <!-- 头部区域 -->
+    <view class="header">
+      <view class="header-top">
+        <text class="main-title">您的健康我来守护</text>
+        <view class="user-icon">
+           <!-- 简单的 Grid 图标样式 -->
+           <view class="grid-icon-dots">
+             <view class="dot"></view><view class="dot"></view>
+             <view class="dot"></view><view class="dot"></view>
+           </view>
+        </view>
+      </view>
+      <text class="sub-title">24小时在线为您解答健康问题</text>
+    </view>
+
+    <!-- 功能宫格区域 -->
+    <view class="grid-container">
+      <block wx:for="{{menuItems}}" wx:key="id">
+        <view class="grid-item" bindtap="onMenuItemTap" data-item="{{item}}">
+          <view class="icon-circle">
+            <text class="emoji">{{item.icon}}</text>
+          </view>
+          <text class="item-title">{{item.title}}</text>
+        </view>
+      </block>
+    </view>
+
+    <!-- 底部区域 (Flex 自动撑开或绝对定位) -->
+    <view class="bottom-area">
+      <view class="bubble-container">
+        <view class="bubble hot-bubble">
+          <text>{{hotTopic}}</text>
+          <view class="hot-badge">热</view>
+        </view>
+        <view class="bubble tip-bubble">
+          <text>{{tip}}</text>
+        </view>
+      </view>
+
+      <button class="speak-btn" hover-class="speak-btn-hover" bindtouchstart="onSpeakBtnPress" bindtouchend="onSpeakBtnRelease">
+        按住说话
+      </button>
+    </view>
+  </view>
+</view>
