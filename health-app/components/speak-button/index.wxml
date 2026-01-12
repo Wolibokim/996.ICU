@@ -1,0 +1,3 @@
+<button class="speak-btn" hover-class="speak-btn-hover" bindtouchstart="onSpeakBtnPress" bindtouchend="onSpeakBtnRelease">
+  按住说话
+</button>

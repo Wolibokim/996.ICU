@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.speak-btn {
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  padding: 25rpx 0;
+  width: 100%;
+  box-shadow: 0 10rpx 30rpx rgba(0, 122, 255, 0.3);
+}
+
+.speak-btn-hover {
+  background-color: #0062cc;
+  transform: scale(0.98);
+}
