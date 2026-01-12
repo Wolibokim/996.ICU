@@ -1,0 +1,160 @@
+/* pages/index/index.wxss */
+.page-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-y: hidden; /* 防止背景滚动 */
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #eaf5fe 0%, #f5f7fa 40%, #eaf5fe 100%);
+  z-index: -1;
+}
+
+.content-wrapper {
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 88px); /* 减去头部预估高度 */
+}
+
+/* Header */
+.header {
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.main-title {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #000;
+}
+
+.sub-title {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.user-icon {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #2196f3;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 10rpx rgba(33, 150, 243, 0.3);
+}
+
+.grid-icon-dots {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24rpx;
+  height: 24rpx;
+  justify-content: space-between;
+}
+
+.dot {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+  border-radius: 2rpx;
+  margin-bottom: 2rpx;
+}
+
+/* Grid System */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+}
+
+.grid-item {
+  width: 48%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  padding: 40rpx 0;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10rpx 30rpx rgba(220, 230, 245, 0.6);
+  position: relative;
+}
+
+/* Icon Styling */
+.icon-circle {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50% 50% 50% 0; /* Teardrop shape ish */
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  transform: rotate(-45deg); /* Rotate to make it look like a drop */
+}
+
+.emoji {
+  font-size: 40rpx;
+  transform: rotate(45deg); /* Counter rotate content */
+}
+
+.item-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Bottom Area */
+.bottom-area {
+  margin-top: auto;
+  padding-bottom: 60rpx;
+}
+
+.bubble-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 40rpx;
+}
+
+.bubble {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-radius: 30rpx 30rpx 30rpx 4rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+}
+
+.hot-bubble {
+  background-color: #f0f7ff;
+}
+
+.hot-badge {
+  background-color: #ff5252;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 2rpx 8rpx;
+  border-radius: 8rpx;
+  margin-left: 10rpx;
+}
+
