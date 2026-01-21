@@ -1,0 +1,50 @@
+{
+  "miniprogramRoot": "dist/",
+  "projectname": "节奏弹球大师",
+  "description": "音乐节奏与弹球消除的创新小游戏",
+  "appid": "YOUR_APP_ID_HERE",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "game",
+  "libVersion": "3.2.0",
+  "srcMiniprogramRoot": "src/",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "file",
+        "value": "**/*.ts"
+      },
+      {
+        "type": "folder",
+        "value": "typings"
+      }
+    ]
+  },
+  "scripts": {
+    "beforeCompile": "",
+    "beforePreview": "",
+    "beforeUpload": "npm run build"
+  }
+}
