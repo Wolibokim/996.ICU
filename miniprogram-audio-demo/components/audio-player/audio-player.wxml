@@ -1,0 +1,50 @@
+<!-- audio-player.wxml -->
+<view class="audio-player">
+  <view class="audio-info">
+    <image class="audio-cover" src="{{coverImage || '/images/default-cover.png'}}" mode="aspectFill"></image>
+    <view class="audio-meta">
+      <view class="audio-title">{{title || '未知音频'}}</view>
+      <view class="audio-artist">{{artist || '未知歌手'}}</view>
+    </view>
+  </view>
+  
+  <view class="audio-progress">
+    <text class="time">{{currentTimeText}}</text>
+    <slider 
+      class="progress-bar"
+      value="{{progress}}"
+      bindchange="onSliderChange"
+      bindchanging="onSliderChanging"
+      activeColor="#07c160"
+      block-size="12"
+    />
+    <text class="time">{{durationText}}</text>
+  </view>
+  
+  <view class="audio-controls">
+    <button class="control-btn" bindtap="onPrevious" wx:if="{{showPrevNext}}">
+      <text class="iconfont icon-previous">⏮</text>
+    </button>
+    
+    <button class="control-btn play-btn" bindtap="onPlayPause">
+      <text class="iconfont" wx:if="{{!isPlaying}}">▶️</text>
+      <text class="iconfont" wx:else>⏸</text>
+    </button>
+    
+    <button class="control-btn" bindtap="onNext" wx:if="{{showPrevNext}}">
+      <text class="iconfont icon-next">⏭</text>
+    </button>
+  </view>
+  
+  <view class="audio-extra" wx:if="{{showExtra}}">
+    <button class="extra-btn" bindtap="onLoop">
+      <text class="iconfont" style="color: {{loop ? '#07c160' : '#999'}}">🔁</text>
+    </button>
+    <button class="extra-btn" bindtap="onSpeed">
+      <text>{{playbackRate}}x</text>
+    </button>
+    <button class="extra-btn" bindtap="onVolume">
+      <text class="iconfont">🔊</text>
+    </button>
+  </view>
+</view>
