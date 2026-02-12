@@ -1,0 +1,64 @@
+@page {
+  size: A4;
+  margin: 20mm 16mm;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #1f2937;
+  line-height: 1.65;
+  font-size: 12.5pt;
+}
+
+h3 {
+  font-size: 20pt;
+  margin: 0 0 12px;
+  color: #111827;
+}
+
+h4, h5, h6, .section-title {
+  margin: 20px 0 8px;
+  color: #111827;
+}
+
+h4 { font-size: 14.5pt; }
+
+hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 18px 0;
+}
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 11pt;
+}
+
+pre {
+  background: #0b1020;
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+blockquote {
+  border-left: 3px solid #60a5fa;
+  padding-left: 12px;
+  color: #374151;
+  margin: 10px 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+strong { color: #111827; }
+
+a { color: #2563eb; text-decoration: none; }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #e5e7eb; padding: 6px 8px; }
+
+.page-break { page-break-after: always; }
+

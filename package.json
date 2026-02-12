@@ -1,0 +1,24 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "996.ICU ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wolibokim/996.ICU.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wolibokim/996.ICU/issues"
+  },
+  "homepage": "https://github.com/Wolibokim/996.ICU#readme",
+  "dependencies": {
+    "marked": "^16.3.0",
+    "puppeteer": "^22.15.0"
+  }
+}
